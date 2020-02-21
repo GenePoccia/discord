@@ -1,7 +1,5 @@
-# discord
+# discordBot
 
-WIP
-
-organizing text commands
+text commands working (organizing)
 
 working on music integration
