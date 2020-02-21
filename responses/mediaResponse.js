@@ -1,10 +1,12 @@
 const PLAY = 'play'
 const SKIP = 'skip'
+const STOP = 'stop'
 
 
 let test = (cmd, arg) => {
     if(cmd === PLAY) handlePlay(arg)
-    else if (cmd === SKIP) return 
+    else if (cmd === SKIP) return 'placeholder'
+    else if (cmd === STOP) return 'placeholder'
 }
 
 let handlePlay = (arg) => {
