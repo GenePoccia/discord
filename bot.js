@@ -1,7 +1,6 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
-
 var messages = require('./messages.js')
 
 const TEXT_COMMAND = '!'
@@ -49,4 +48,3 @@ bot.on('message', function (user, userID, channelID, message, evt) {
          })
      }
 });
-

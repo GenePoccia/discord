@@ -10,3 +10,7 @@ let getCommand = (msg) => {
         //handle music
     }
 }
+
+module.exports = {
+    getCommand
+}
