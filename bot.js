@@ -7,28 +7,19 @@ var textHandler = require('./text_responses/textController.js')
 const TEXT_COMMAND = '!'
 const MUSIC_COMMAND = '='
 
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console, {
-    colorize: true
-});
-logger.level = 'debug';
-// Initialize Discord Bot
+//initialize bot using auth token
 var bot = new Discord.Client({
     token: auth.token,
     autorun: true
  });
 
+//bot running confirmation
 bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
+    console.log('TooDix bot is currently running');
 });
 
+//messages
 bot.on('message', function (user, userID, channelID, message, evt) {
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`
-
     if (message.substring(0, 1) == TEXT_COMMAND) {
         textHandler.send(message, bot, channelID)
      }
