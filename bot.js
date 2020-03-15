@@ -21,14 +21,14 @@ bot.on('ready', function (evt) {
 //messages
 bot.on('message', function (user, userID, channelID, message, evt) {
     //Handles messages from Matt
-    if (userID === '334508571037401090') {
-        bot.sendMessage({
-            to: channelID,
-            message: 'Excuse me Matt31, can you stop trolling?'
-        })
-    }
+    // if (userID === '334508571037401090') {
+    //     bot.sendMessage({
+    //         to: channelID,
+    //         message: 'Excuse me Matt31, can you stop trolling?'
+    //     })
+    // }
     //handles regular messages
-    else if (message.substring(0, 1) == TEXT_COMMAND) {
+     if (message.substring(0, 1) == TEXT_COMMAND) {
         textHandler.send(message, bot, channelID)
      }
      else if (message.substring(0, 1) == MUSIC_COMMAND) {
