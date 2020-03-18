@@ -6,6 +6,7 @@ var textHandler = require('./text_responses/textController.js')
 const TEXT_COMMAND = '!'
 const MUSIC_COMMAND = '='
 
+const userTest = require('./messageHandler');
 //initialize bot using auth token
 var bot = new Discord.Client({
     token: auth.token,
@@ -19,7 +20,11 @@ bot.on('ready', function (evt) {
 
 //messages
 bot.on('message', function (user, userID, channelID, message, evt) {
+    let options = {
+        user, userID, channelID, message, evt, bot
+    };
 
+    userTest.test(options);
      if (message.substring(0, 1) == TEXT_COMMAND) {
         textHandler.send(message, bot, channelID)
      }
